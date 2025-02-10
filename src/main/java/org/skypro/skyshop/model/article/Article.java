@@ -8,8 +8,8 @@ import java.util.UUID;
 
 public class Article implements Searchable {
 
-    String articleName;
-    String articleText;
+    private String articleName;
+    private String articleText;
     private final UUID id;
 
     public Article(String articleName, String articleText, UUID id) {

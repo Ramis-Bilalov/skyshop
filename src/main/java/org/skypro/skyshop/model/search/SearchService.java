@@ -1,11 +1,10 @@
 package org.skypro.skyshop.model.search;
 
-import org.skypro.skyshop.model.service.StorageService;
+import org.skypro.skyshop.service.StorageService;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class SearchService {
@@ -26,7 +25,7 @@ public class SearchService {
     public Collection<SearchResult> getSearchResults(String searchTerm) {
         System.out.println("searchTerm = " + searchTerm);
         Collection<SearchResult> searchResultCollection = new ArrayList<>();
-        List<Searchable> collect = getSearchableCollection().stream().filter(searchable -> searchable.searchTerm().contains(searchTerm)).collect(Collectors.toList());
+        List<Searchable> collect = getSearchableCollection().stream().filter(searchable -> searchable.searchTerm().contains(searchTerm)).toList();
         collect.forEach(searchable -> searchResultCollection.add(SearchResult.fromSearchable(searchable)));
         return searchResultCollection;
     }
