@@ -1,6 +1,7 @@
 package org.skypro.skyshop.model.search;
 
 import org.skypro.skyshop.service.StorageService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -9,11 +10,9 @@ import java.util.List;
 @Service
 public class SearchService {
 
-    private final StorageService storageService;
+    @Autowired
+    StorageService storageService;
 
-    public SearchService() {
-        storageService = new StorageService();
-    }
 
     public Collection<Searchable> getSearchableCollection() {
         Collection<Searchable> searchables = new ArrayList<>();
