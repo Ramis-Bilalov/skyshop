@@ -37,7 +37,7 @@ public class DiscountedProduct extends Product {
     }
 
     @Override
-    public UUID getId() {
+    public UUID getUuid() {
         return id;
     }
 }

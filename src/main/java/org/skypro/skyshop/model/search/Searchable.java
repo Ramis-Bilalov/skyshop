@@ -10,5 +10,5 @@ public interface Searchable {
         return "Имя " + searchTerm() + " объекта\nТип " + getContentType();
     }
 
-    UUID getId();
+    UUID getUuid();
 }

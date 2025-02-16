@@ -16,8 +16,8 @@ public class StorageService {
     private final Map<UUID, Article> uuidArticleMap;
 
     public StorageService() {
-        uuidProductMap = new HashMap<>();
-        uuidArticleMap = new HashMap<>();
+        this.uuidProductMap = new HashMap<>();
+        this.uuidArticleMap = new HashMap<>();
         fillTheMap();
     }
 
@@ -40,19 +40,25 @@ public class StorageService {
         uuidArticleMap.put(UUID.randomUUID(), koreaAutos);
         uuidArticleMap.put(UUID.randomUUID(), germanAutos);
         uuidArticleMap.put(UUID.randomUUID(), japanAutos);
+        System.out.println("uuidProductMap при инициализации = " + uuidProductMap);
 
     }
 
+    public Optional<Product> getProductById(UUID id) {
+        Optional<Product> product = Optional.ofNullable(uuidProductMap.get(id));
+        return product;
+    }
 
     public Collection<Product> getUuidProductMap() {
-        Collection<Product> productCollection = new ArrayList<>();
-        uuidProductMap.forEach((key, value)-> productCollection.add(value));
+        Collection<Product> productCollection = uuidProductMap.values();
+        Collection<UUID> uuids = uuidProductMap.keySet();
         return productCollection;
     }
 
+
     public Collection<Article> getUuidArticleMap() {
         Collection<Article> articleCollection = new ArrayList<>();
-        uuidArticleMap.forEach((key, value)-> articleCollection.add(value));
+        uuidArticleMap.forEach((key, value) -> articleCollection.add(value));
         return articleCollection;
     }
 }
