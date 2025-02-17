@@ -28,18 +28,18 @@ public class StorageService {
         FixPriceProduct kiwi = new FixPriceProduct("Kiwi", UUID.randomUUID());
         SimpleProduct watermelon = new SimpleProduct("Watermelon", 50, UUID.randomUUID());
         SimpleProduct banana = new SimpleProduct("Banana", 130, UUID.randomUUID());
-        uuidProductMap.put(UUID.randomUUID(), orange);
-        uuidProductMap.put(UUID.randomUUID(), apple);
-        uuidProductMap.put(UUID.randomUUID(), mango);
-        uuidProductMap.put(UUID.randomUUID(), kiwi);
-        uuidProductMap.put(UUID.randomUUID(), watermelon);
-        uuidProductMap.put(UUID.randomUUID(), banana);
+        uuidProductMap.put(orange.getUuid(), orange);
+        uuidProductMap.put(apple.getUuid(), apple);
+        uuidProductMap.put(mango.getUuid(), mango);
+        uuidProductMap.put(kiwi.getUuid(), kiwi);
+        uuidProductMap.put(watermelon.getUuid(), watermelon);
+        uuidProductMap.put(banana.getUuid(), banana);
         Article koreaAutos = new Article("Korea Autos", "KIA, HYUNDAI, GENESIS, SSANGYONG", UUID.randomUUID());
         Article germanAutos = new Article("Germany Autos", "VW, AUDI, SKODA, BMW, MERCEDES", UUID.randomUUID());
         Article japanAutos = new Article("Japan Autos", "Toyota, Mazda, Lexus", UUID.randomUUID());
-        uuidArticleMap.put(UUID.randomUUID(), koreaAutos);
-        uuidArticleMap.put(UUID.randomUUID(), germanAutos);
-        uuidArticleMap.put(UUID.randomUUID(), japanAutos);
+        uuidArticleMap.put(koreaAutos.getUuid(), koreaAutos);
+        uuidArticleMap.put(germanAutos.getUuid(), germanAutos);
+        uuidArticleMap.put(japanAutos.getUuid(), japanAutos);
         System.out.println("uuidProductMap при инициализации = " + uuidProductMap);
 
     }
