@@ -10,8 +10,11 @@ import java.util.List;
 @Service
 public class SearchService {
 
-    @Autowired
-    StorageService storageService;
+    public SearchService(StorageService storageService) {
+        this.storageService = storageService;
+    }
+
+    private final StorageService storageService;
 
 
     public Collection<Searchable> getSearchableCollection() {
