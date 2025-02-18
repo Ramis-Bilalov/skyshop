@@ -12,7 +12,6 @@ public class Article implements Searchable {
     private String articleText;
     private final UUID id;
 
-
     public Article(String articleName, String articleText, UUID id) {
         this.articleName = articleName;
         this.articleText = articleText;
