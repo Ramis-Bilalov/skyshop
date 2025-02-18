@@ -52,7 +52,7 @@ public class Article implements Searchable {
     }
 
     @Override
-    public UUID getId() {
+    public UUID getUuid() {
         return id;
     }
 

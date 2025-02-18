@@ -5,11 +5,11 @@ import java.util.UUID;
 public class SimpleProduct extends Product {
 
     private int productPrice;
-    private final UUID id;
+    private final UUID uuid;
 
-    public SimpleProduct(String productName, int productPrice, UUID id) {
+    public SimpleProduct(String productName, int productPrice, UUID uuid) {
         super(productName);
-        this.id = id;
+        this.uuid = uuid;
         if (productPrice >= 1) {
             this.productPrice = productPrice;
         } else {
@@ -33,7 +33,7 @@ public class SimpleProduct extends Product {
     }
 
     @Override
-    public UUID getId() {
-        return id;
+    public UUID getUuid() {
+        return uuid;
     }
 }

@@ -15,7 +15,7 @@ public class SearchResult {
     }
 
     public static SearchResult fromSearchable(Searchable searchable) {
-        return new SearchResult(searchable.getId(), searchable.searchTerm(), searchable.getContentType());
+        return new SearchResult(searchable.getUuid(), searchable.searchTerm(), searchable.getContentType());
     }
 
     @Override
