@@ -40,19 +40,14 @@ public class StorageService {
         uuidArticleMap.put(koreaAutos.getUuid(), koreaAutos);
         uuidArticleMap.put(germanAutos.getUuid(), germanAutos);
         uuidArticleMap.put(japanAutos.getUuid(), japanAutos);
-        System.out.println("uuidProductMap при инициализации = " + uuidProductMap);
-
     }
 
     public Optional<Product> getProductById(UUID id) {
-        Optional<Product> product = Optional.ofNullable(uuidProductMap.get(id));
-        return product;
+        return Optional.ofNullable(uuidProductMap.get(id));
     }
 
     public Collection<Product> getUuidProductMap() {
-        Collection<Product> productCollection = uuidProductMap.values();
-        Collection<UUID> uuids = uuidProductMap.keySet();
-        return productCollection;
+        return uuidProductMap.values();
     }
 
 
