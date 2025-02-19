@@ -34,17 +34,11 @@ public class BasketService {
 
     public UserBasket getUserBasket() {
         Map<UUID, Integer> productsMap = productBasket.getProductsMap();
-        List<BasketItem> basketItems = new ArrayList<>();
-        try {
-            basketItems = productsMap.entrySet().stream().map(entry -> {
-                Optional<Product> product = storageService.getProductById(entry.getKey());
-                BasketItem basketItem = new BasketItem(product.get());
-                basketItem.setCount(entry.getValue());
-                return basketItem;
-            }).collect(Collectors.toList());
-        } catch (NoSuchProductException n) {
-            n.printStackTrace();
-        }
+        List<BasketItem> basketItems = productsMap
+                .keySet()
+                .stream()
+                .map(integer -> new BasketItem(storageService.getProductById(integer).orElseThrow(NoSuchProductException::new)))
+                .toList();
         return new UserBasket(basketItems);
     }
 }
