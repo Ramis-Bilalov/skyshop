@@ -20,4 +20,12 @@ public class UserBasket {
     public List<BasketItem> getBasketItemList() {
         return basketItemList;
     }
+
+    @Override
+    public String toString() {
+        return "UserBasket{" +
+                "basketItemList=" + basketItemList +
+                ", total=" + total +
+                '}';
+    }
 }

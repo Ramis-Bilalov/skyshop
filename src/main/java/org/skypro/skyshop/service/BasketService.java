@@ -23,13 +23,20 @@ public class BasketService {
         this.storageService = storageService;
     }
 
-
+    public BasketService() {
+        productBasket = new ProductBasket();
+        storageService = new StorageService();
+    }
 
     public void addProductToBasket(UUID uuid) {
         if (storageService.getProductById(uuid).isEmpty()) {
             throw new NoSuchProductException("Такого продукта не существует!");
         } else
             productBasket.addProduct(uuid);
+    }
+
+    public Collection<Product> getStorage() {
+        return storageService.getUuidProductMap();
     }
 
     public UserBasket getUserBasket() {

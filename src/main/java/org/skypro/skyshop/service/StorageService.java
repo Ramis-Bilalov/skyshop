@@ -21,7 +21,7 @@ public class StorageService {
         fillTheMap();
     }
 
-    private void fillTheMap() {
+    public void fillTheMap() {
         SimpleProduct orange = new SimpleProduct("Orange", 115, UUID.randomUUID());        // создание продуктов
         DiscountedProduct apple = new DiscountedProduct("Apple", 80, 15, UUID.randomUUID());
         SimpleProduct mango = new SimpleProduct("Mango", 500, UUID.randomUUID());
@@ -45,6 +45,7 @@ public class StorageService {
     public Optional<Product> getProductById(UUID id) {
         return Optional.ofNullable(uuidProductMap.get(id));
     }
+
 
     public Collection<Product> getUuidProductMap() {
         return uuidProductMap.values();
